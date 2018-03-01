@@ -10,8 +10,8 @@ import { DrinkService } from '../../services/drink.service';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-  productId: string;
-  drink: {};
+  drinkId: string;
+  drink: any;
   constructor(
     private drinkService: DrinkService,
     private activatedRoute: ActivatedRoute
@@ -20,12 +20,13 @@ export class ResultsComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params
     .subscribe((params) => {
-      this.productId = String(params.productId)
-      this.drinkService(this.productId)
+      this.drinkId = String(params.drinkId)
+      this.drinkService.getDrinkById(this.drinkId)
       .then((drink) => {
         console.log(drink)
         this.drink = drink
       })
-  }
+  })
 
+}
 }

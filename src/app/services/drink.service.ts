@@ -27,8 +27,8 @@ export class DrinkService {
     };
     return this.httpClient.get(`${this.API_URL}/${drinkId}`, options)
     .toPromise()
-    .then((data) => console.log(data))
-    // .then((data) => this.setDrink(data))
+    // .then((data) => console.log(data))
+    .then((data) => this.setDrink(data))
   }
 
 }
