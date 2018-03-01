@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DrinkService } from '../../services/drink.service';
+
 
 @Component({
   selector: 'app-search-form',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private drinkService: DrinkService) { }
 
   ngOnInit() {
   }
 
+  submitForm(form) {
+    this.drinkService.getDrinkById(form)
+  }
 }
