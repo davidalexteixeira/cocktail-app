@@ -12,7 +12,7 @@ import { ResultsComponent } from './pages/results/results.component';
 
 const routes: Routes = [
   { path: '',  component: HomepageComponent },
-  { path: '/:productId', component: ResultsComponent s}
+  { path: '/:productId', component: ResultsComponent }
 ]
 
 
