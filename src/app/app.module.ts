@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { ResultsComponent } from './pages/results/results.component';
+//Service
+import { DrinkService } from './services/drink.service';
 
 
 
@@ -27,7 +29,7 @@ const routes: Routes = [
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [DrinkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
