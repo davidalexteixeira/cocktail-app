@@ -1,13 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
 
 
 import { AppComponent } from './app.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { ResultsComponent } from './pages/results/results.component';
+
+
+
+const routes: Routes = [
+  { path: '',  component: HomepageComponent },
+  { path: '/:productId', component: ResultsComponent s}
+]
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomepageComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule
