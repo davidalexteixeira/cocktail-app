@@ -1,3 +1,18 @@
 <p>
   results works!
 </p>
+
+<div>
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Quantity</th> 
+    <th>Unit</th>
+  </tr>
+  <tr *ngFor="let ingridient of ingridients">
+      <th>{{drink.ingridient.name}}</th>
+      <th>{{drink.ingridient.quantity}}</th> 
+      <th>{{drink.ingridient.unit}}</th>
+    </tr>
+</table>
+</div>

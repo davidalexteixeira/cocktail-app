@@ -21,11 +21,10 @@ export class ResultsComponent implements OnInit {
     this.activatedRoute.params
     .subscribe((params) => {
       this.productId = String(params.productId)
-      this.drinkService(this.productId)
+      this.drinkService.getDrinkById(this.productId)
       .then((drink) => {
         console.log(drink)
         this.drink = drink
-      })
-  }
-
-}
+      });
+    })
+}}
