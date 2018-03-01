@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -15,7 +18,7 @@ import { DrinkService } from './services/drink.service';
 
 const routes: Routes = [
   { path: '',  component: HomepageComponent },
-  { path: '/:productId', component: ResultsComponent }
+  { path: ':productId', component: ResultsComponent }
 ]
 
 
@@ -27,7 +30,10 @@ const routes: Routes = [
     ResultsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [DrinkService],
   bootstrap: [AppComponent]
