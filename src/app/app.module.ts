@@ -18,7 +18,7 @@ import { DrinkService } from './services/drink.service';
 
 const routes: Routes = [
   { path: '',  component: HomepageComponent },
-  { path: ':productId', component: ResultsComponent }
+  { path: ':drinkId', component: ResultsComponent }
 ]
 
 

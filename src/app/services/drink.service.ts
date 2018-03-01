@@ -9,26 +9,15 @@ export class DrinkService {
   private drinkChange: Subject<any> = new Subject();
 
 
-  API_URL = 'http://localhost:3000/';
+  API_URL = 'http://localhost:3000';
 
   constructor(
     private httpClient: HttpClient
   ) { }
-
-  private setDrink(drink?: any) {
-    this.drink = drink;
-    this.drinkChange.next(drink);
-    return drink;
-  }
   
   getDrinkById(drinkId) {
-    const options = {
-      withCredentials: true
-    };
-    return this.httpClient.get(`${this.API_URL}/${drinkId}`, options)
+    return this.httpClient.get(`${this.API_URL}/${drinkId}`)
     .toPromise()
-    // .then((data) => console.log(data))
-    .then((data) => this.setDrink(data))
   }
 
 }
