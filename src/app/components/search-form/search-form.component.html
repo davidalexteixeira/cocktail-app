@@ -19,7 +19,7 @@
 
   <div class="field">
     <label>Intensity</label>
-    <select>
+    <select name="intensity" [(ngModel)]="intensity" #intensityField="ngModel">
       <option selected="selected" value="casual">casual</option>
       <option value="Lit">Lit</option>
       <option value="blackout">blackout</option>
@@ -29,10 +29,11 @@
 
 
   <div class="field submit">
-    <button type="submit" [disabled]="processing">Search</button>
+    <button type="submit" [disabled]="processing" [routerLink]="[cocktailField.value]">Search</button>
     <div *ngIf="feedbackEnabled && form.invalid">
       <p class="validation">there are errors in the form, please review the fields</p>
     </div>
   </div>
 </form>
 </div>
+
